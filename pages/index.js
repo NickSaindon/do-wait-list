@@ -93,7 +93,7 @@ export default function Home() {
                                     type="text" 
                                     className={`form-control form-control-lg ${errors.name ? 'is-invalid' : ''}`}
                                     id="name" 
-                                    placeholder="Full Name" 
+                                    placeholder="* Full Name" 
                                     {...field}
                                   />
                                 )}
@@ -126,7 +126,7 @@ export default function Home() {
                                     type="email" 
                                     className={`form-control form-control-lg ${errors.email ? 'is-invalid' : ''}`}
                                     id="email" 
-                                    placeholder="Email" 
+                                    placeholder="* Email" 
                                     {...field}
                                   />
                                 )}
@@ -147,8 +147,9 @@ export default function Home() {
                                 name="phone"
                                 control={control}
                                 rules={{
-                                  required: true,
+                                  required: false,
                                   pattern: /^\(?\b[0-9]{3}\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}\b$/,
+                                  message: 'Phone number is not completed',
                                 }}
                                 render={({ field: {name, onChange = (e) => setPhone(e.target.value), value = phone}}) => (
                                   <NumberFormat
@@ -163,12 +164,7 @@ export default function Home() {
                                 )}
                               />
                               <div className="invalid-feedback">
-                                {errors.phone
-                                  ? errors.phone.type === 'pattern'
-                                    ? 'Phone number is not completed'
-                                    : 'Phone number is required'
-                                  : ''
-                                }
+                                {errors.phone && errors.phone.message}
                               </div>
                             </div>
                           </div>

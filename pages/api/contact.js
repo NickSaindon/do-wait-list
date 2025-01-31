@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer';
 
 export default async (req, res) => {
   require('dotenv').config()
-  const { name, email, phone, message } = req.body;
+  const { name, email, phone } = req.body;
 
   const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
