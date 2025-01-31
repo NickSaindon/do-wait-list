@@ -75,7 +75,7 @@ export default async (req, res) => {
                                       <td align="center">
                                         <div border="0" style="border: none; height: 60px;">
                                           <p style="font-size: 18px; line-height: 24px; font-family: Verdana, Geneva, sans-serif; color: #ffffff; text-align: center; mso-table-lspace:0;mso-table-rspace:0;">
-                                            This is an email from the Dragon Organics website contact form.  Please try and return this message with any answers to questions. 
+                                            This is an email from the Dragon Organics wait list app.  Create a customer list and contact when product is available. 
                                           </p>
                                         </div>
                                       </td>
